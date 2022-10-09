@@ -13,7 +13,7 @@ import "./octicons/octicons.min.css";
  * 
  * Custom themes can be made by copying the light or dark theme and modifying the CSS.
  * 
- * PS: if the error "User ... wasn't found" is thrown after a little while, it's probably because the GitHub API rate limit has been reached.
+ * PS: if the error "User ... wasn't found" is shown after a little while, it's probably because the GitHub API rate limit has been reached.
  * At the time of writing, the rate limit is 60 requests per hour.
  * See [the github api docs](https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limit-http-headers) for more info.
 */
