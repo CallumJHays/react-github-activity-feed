@@ -1,6 +1,6 @@
 {
   "name": "react-github-activity-feed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Turn-key Github activity feed React component. Great for portfolio sites of sporadic open-source developers.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -27,6 +27,7 @@
     "@storybook/builder-webpack4": "^6.5.12",
     "@storybook/manager-webpack4": "^6.5.12",
     "@storybook/react": "^6.5.12",
+    "@storybook/react-docgen-typescript-plugin": "^1.0.1",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.21",
     "babel-loader": "^8.2.5",

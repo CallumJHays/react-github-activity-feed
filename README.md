@@ -2,6 +2,10 @@
 
 Turn-key Github activity feed React component. Great for portfolio sites of sporadic open-source developers.
 
+![demo animation](demo.webp)
+
+[Storybook Demo & Docs available here](https://callumjhays.github.io/react-github-activity-feed/?path=/docs/githubactivityfeed--primary)
+
 Most of the credit goes to [@caseyscarborough](https://github.com/caseyscarborough) for his work on [github-activity-feed](https://github.com/caseyscarborough/github-activity-feed)
 
 ## Install
@@ -12,25 +16,23 @@ yarn add react-github-activity-feed
 npm i --save react-github-activity-feed
 ```
 
-## Usage
+## QuickStart
 
 ```tsx
 import { GithubActivityFeed } from "react-github-activity-feed";
 import "react-github-activity-feed/light-theme.css"
 //  or "react-github-activity-feed/dark-theme.css"
 
-const MyGHFeedComponent = () => (
-    <GithubFeed
+const MyGithubActivity = () => (
+    <GithubActivityFeed
         user="callumjhays"
-        repo="react-github-activity-feed" // optional
+        repo="react-github-activity-feed"
         limit={20}
     />
-)
+);
 ```
 
-Requires `react >= v16.8` for functional components. 
-
-If you need older version support please post a quick github issue and I'll get around to it.
+Requires `react >= v16.8` for functional components & hooks. If you need older version support please post a quick github issue and I'll get around to it.
 
 ## Why
 Like [react-github-activity](https://www.npmjs.com/package/react-github-activity),

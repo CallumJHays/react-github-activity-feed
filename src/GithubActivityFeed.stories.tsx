@@ -1,5 +1,3 @@
-// @ts-nocheck
-// TODO: figure out how to get typings with args external to the component working
 
 import React from "react";
 import { GithubActivityFeed } from "./GithubActivityFeed";
@@ -10,7 +8,7 @@ import lightThemeCSS from "!css-loader!../src/light-theme.css";
 // @ts-ignore
 import darkThemeCSS from "!css-loader!../src/dark-theme.css";
 
-export default {
+export default { 
   component: GithubActivityFeed,
 
   argTypes: {
@@ -30,12 +28,13 @@ export default {
     },
 
     theme: { table: { category: "theme" }, control: "select", options: ["light", "dark"] },
-    width: { table: { category: "parent" }, control: "number" },
-    height: { table: { category: "parent" }, control: "number" },
-    resizeable: { table: { category: "parent" }, control: "boolean" },
+    width: { table: { category: "parent div" }, control: "number" },
+    height: { table: { category: "parent div" }, control: "number" },
+    resizeable: { table: { category: "parent div" }, control: "boolean" },
   },
 } as ComponentMeta<typeof GithubActivityFeed>;
 
+// TODO: figure out how to get typings with args external to the component working
 const Template: ComponentStory<typeof GithubActivityFeed> = ({
   width,
   height,
@@ -44,6 +43,10 @@ const Template: ComponentStory<typeof GithubActivityFeed> = ({
   ...props
 }) => (
   <>
+  
+    <div style={{display: 'none'}}>
+      PS: The below style tag is automatically injected by importing a theme stylesheet.
+    </div>
     <style>
       {/* kudos https://github.com/storybookjs/storybook/discussions/17062#discussioncomment-1859248 */}
       {(theme == "light" ? lightThemeCSS : darkThemeCSS).toString()}

@@ -3,13 +3,37 @@ import React, { useEffect, useRef } from "react";
 import GithubActivity from "./github-activity.js";
 import "./octicons/octicons.min.css";
 
+
+/**
+ * For this component to display correctly, a valid theme stylesheet must be imported (globally).
+ * 
+ * Two themes are provided:
+ * - light: `import "react-github-activity-feed/dist/light-theme.css";`
+ * - dark: `import "react-github-activity-feed/dist/dark-theme.css";`
+ * 
+ * Custom themes can be made by copying the light or dark theme and modifying the CSS.
+ * 
+ * PS: if the error "User ... wasn't found" is thrown after a little while, it's probably because the GitHub API rate limit has been reached.
+ * At the time of writing, the rate limit is 60 requests per hour.
+ * See [the github api docs](https://docs.github.com/en/rest/overview/resources-in-the-rest-api#rate-limit-http-headers) for more info.
+*/
 export function GithubActivityFeed({
   user,
   repo = "*",
   limit = 20,
 }: {
+  /**
+   * The username of the github user to display activity for
+   */
   user: string;
+  /**
+   * The repo name to filter by. Only events for this repo will be shown.
+   */
   repo?: string;
+  
+  /**
+   * The max number of events to show
+   */
   limit?: number;
 }) {
   // unsure what pattern should be preferred here,
