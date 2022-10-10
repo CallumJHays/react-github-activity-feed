@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 // @ts-ignore
 import GithubActivity from "./github-activity.js";
 
-
 /**
  * For this component to display correctly, a valid theme stylesheet must be imported (globally).
  * 
@@ -19,12 +18,13 @@ import GithubActivity from "./github-activity.js";
 export function GithubActivityFeed({
   user,
   repo = "*",
-  limit = 20,
+  limit = 20
 }: {
   /**
    * The username of the github user to display activity for
    */
   user: string;
+
   /**
    * The repo name to filter by. Only events for this repo will be shown.
    */
@@ -44,23 +44,11 @@ export function GithubActivityFeed({
       GithubActivity.feed({
         username: user,
         repository: repo == "*" ? null : repo,
-        selector: `#${ref.current.id}`,
+        div: ref.current,
         limit,
       });
     }
   }, [user, repo, limit]);
 
-  return <div id={genRandStr(16)} ref={ref} style={{ height: "100%" }} />;
-}
-
-function genRandStr(length: number) {
-  // kudos to https://stackoverflow.com/a/1349426/1266662
-  var result = "";
-  var characters =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  var charactersLength = characters.length;
-  for (var i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
-  }
-  return result;
+  return <div ref={ref} style={{ height: "100%" }} />;
 }

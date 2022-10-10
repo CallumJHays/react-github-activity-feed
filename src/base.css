@@ -88,7 +88,7 @@
     padding: 5px;
     border-top: 1px solid var(--border-col);
     height: 16px;
-    width: calc(100% - 20px);
+    width: 100%;
     background: var(--main-bg-col); /* Old browsers */
     background: -moz-linear-gradient(top,  var(--main-bg-col) 0%, var(--gradient-bg-col) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,var(--main-bg-col)), color-stop(100%,var(--gradient-bg-col))); /* Chrome,Safari4+ */

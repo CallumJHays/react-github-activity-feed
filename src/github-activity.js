@@ -216,8 +216,7 @@ var GitHubActivity = (function() {
       div.innerHTML = Mustache.render(templates.Stream, { text: output, footer: templates.Footer });
       div.style.position = 'relative';
     },
-    writeOutput: function(selector, content) {
-      var div = selector.charAt(0) === '#' ? document.getElementById(selector.substring(1)) : document.getElementsByClassName(selector.substring(1));
+    writeOutput: function(div, content) {
       if (div instanceof HTMLCollection) {
         for (var i = 0; i < div.length; i++) {
           methods.renderStream(content, div[i]);
@@ -226,21 +225,21 @@ var GitHubActivity = (function() {
         methods.renderStream(content, div);
       }
     },
-    renderIfReady: function(selector, header, activity) {
+    renderIfReady: function(div, header, activity) {
       if (header && activity) {
-        methods.writeOutput(selector, header + activity);
+        methods.writeOutput(div, header + activity);
       }
     }
   };
 
   obj.feed = function(options) {
     config = options;
-    if (!options.username || !options.selector) {
-      throw "You must specify the username and selector options for the activity stream.";
+    if (!options.username || !options.div) {
+      throw "You must specify the username and div options for the activity stream.";
       return false;
     }
 
-    var selector = options.selector,
+    var div = options.div,
         userUrl   = 'https://api.github.com/users/' + options.username,
         eventsUrl = userUrl + '/events',
         header,
@@ -269,7 +268,7 @@ var GitHubActivity = (function() {
       } else {
         header = methods.getHeaderHTML(output)
       }
-      methods.renderIfReady(selector, header, activity)
+      methods.renderIfReady(div, header, activity)
     });
 
     methods.getOutputFromRequest(eventsUrl, function(error, output) {
@@ -279,7 +278,7 @@ var GitHubActivity = (function() {
         var limit = options.limit != 'undefined' ? parseInt(options.limit, 10) : null;
         activity = methods.getActivityHTML(output, limit);
       }
-      methods.renderIfReady(selector, header, activity);
+      methods.renderIfReady(div, header, activity);
     });
   };
 
