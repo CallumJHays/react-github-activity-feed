@@ -32,8 +32,8 @@ npm i --save react-github-activity-feed
 
 ```tsx
 import { GithubActivityFeed } from "react-github-activity-feed";
-import "react-github-activity-feed/light-theme.css"
-//  or "react-github-activity-feed/dark-theme.css"
+import "react-github-activity-feed/light.css"
+//  or "react-github-activity-feed/dark.css"
 
 const MyGithubActivity = () => (
     <GithubActivityFeed

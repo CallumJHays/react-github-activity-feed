@@ -1,6 +1,6 @@
 {
   "name": "react-github-activity-feed",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Turn-key Github activity feed React component. Great for portfolio sites of sporadic open-source developers.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
