@@ -30,7 +30,7 @@ export default [
       typescript({ tsconfig: "./tsconfig.json", exclude: ["**/*.stories.tsx"] }),
       copy({
         targets: [
-          { src: ['src/light-theme.css', 'src/dark-theme.css'], dest: 'dist/' }
+          { src: ['src/light.css', 'src/dark.css', 'src/base.css', 'src/octicons'], dest: 'dist/' }
         ]
       }),
       terser()

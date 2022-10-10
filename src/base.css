@@ -69,7 +69,7 @@
   .gha-header {
     position: absolute;
     height: 67px;
-    width: 100%;
+    width: calc(100% - 2px);
     /* padding: 10px; */
     border-bottom: 1px solid var(--border-col);
     background: var(--main-bg-col); /* Old browsers */
@@ -132,8 +132,8 @@
     display: inline;
     float: right;
     padding-right: 15px;
-    max-width: 60px;
-    height: 67px;
+    height: 60px;
+    width: 60px;
   }
   
   .gha-gravatar img {
