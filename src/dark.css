@@ -1,0 +1,11 @@
+@import "./base.css";
+
+.gha-feed {
+  --main-bg-col: #161b22;
+  --gradient-bg-col: #161b22;
+  --border-col: #333;
+  --small-text-col: #8b949e;
+  --time-text-col: #bbb;
+  --link-col: #388bfd;
+  --gh-text-col: #c9d1d9;
+}

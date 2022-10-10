@@ -1,15 +1,14 @@
 import React, { useEffect, useRef } from "react";
 // @ts-ignore
 import GithubActivity from "./github-activity.js";
-import "./octicons/octicons.min.css";
 
 
 /**
  * For this component to display correctly, a valid theme stylesheet must be imported (globally).
  * 
  * Two themes are provided:
- * - light: `import "react-github-activity-feed/dist/light-theme.css";`
- * - dark: `import "react-github-activity-feed/dist/dark-theme.css";`
+ * - light: `import "react-github-activity-feed/dist/light.css";`
+ * - dark: `import "react-github-activity-feed/dist/dark.css";`
  * 
  * Custom themes can be made by copying the light or dark theme and modifying the CSS.
  * 

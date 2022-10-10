@@ -4,9 +4,9 @@ import { GithubActivityFeed } from "./GithubActivityFeed";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // @ts-ignore
-import lightThemeCSS from "!css-loader!../src/light-theme.css";
+import lightCSS from "!css-loader!../src/light.css";
 // @ts-ignore
-import darkThemeCSS from "!css-loader!../src/dark-theme.css";
+import darkCSS from "!css-loader!../src/dark.css";
 
 export default { 
   component: GithubActivityFeed,
@@ -49,7 +49,7 @@ const Template: ComponentStory<typeof GithubActivityFeed> = ({
     </div>
     <style>
       {/* kudos https://github.com/storybookjs/storybook/discussions/17062#discussioncomment-1859248 */}
-      {(theme == "light" ? lightThemeCSS : darkThemeCSS).toString()}
+      {(theme == "light" ? lightCSS : darkCSS).toString()}
     </style>
     <div
       style={{

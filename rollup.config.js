@@ -2,7 +2,6 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
-import styles from "rollup-plugin-styles";
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import { terser } from 'rollup-plugin-terser'
 import copy from 'rollup-plugin-copy'
@@ -28,8 +27,7 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
-      styles(),
+      typescript({ tsconfig: "./tsconfig.json", exclude: ["**/*.stories.tsx"] }),
       copy({
         targets: [
           { src: ['src/light-theme.css', 'src/dark-theme.css'], dest: 'dist/' }
